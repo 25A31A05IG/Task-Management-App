@@ -1,0 +1,64 @@
+* {
+.Low {
+  background: #10b981;
+}
+
+.Medium {
+  background: #f59e0b;
+}
+
+.High {
+  background: #ef4444;
+}
+
+.status {
+  color: #777;
+}
+
+.task-footer {
+  margin-top: 20px;
+}
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.login-left,
+.login-right {
+  width: 50%;
+}
+
+.login-left {
+  background: white;
+  padding: 60px;
+}
+
+.login-box {
+  margin-top: 140px;
+  max-width: 500px;
+}
+
+.login-box h2 {
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  margin-bottom: 25px;
+  color: #777;
+}
+
+.login-right {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-card {
+  background: white;
+  width: 320px;
+  padding: 25px;
+  border-radius: 20px;
+}
+}
