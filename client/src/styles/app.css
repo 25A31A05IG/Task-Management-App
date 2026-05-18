@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+/* LAYOUT */
+
+.layout {
+  display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #111827;
+  padding: 25px;
+  border-right: 1px solid #1e293b;
+  position: fixed;
+}
+
+/* LOGO */
+
+.logo {
+  margin-bottom: 30px;
+}
+
+.logo h2 {
+  font-size: 30px;
+  font-weight: bold;
+
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* PROFILE */
+
+.profile {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+}
+
+.profile h3 {
+  margin-top: 12px;
+  color: white;
+}
+
+.profile p {
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+/* SIDEBAR NAV */
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar nav a {
+  text-decoration: none;
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  background: white;
+  color: black;
+}
+
+/* LOGOUT BUTTON */
+
+.logout-btn {
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  margin-left: 270px;
+  padding: 30px;
+  width: 100%;
+}
+
+/* DASHBOARD HEADER */
+
+.dashboard-header {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.dashboard-header h1 {
+
+  font-size: 32px;
+
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  font-weight: bold;
+}
+
+.dashboard-header p {
+  margin-top: 10px;
+  color: #cbd5e1;
+}
+
+/* GRADIENT TITLES */
+
+.gradient-title {
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+
+  margin-bottom: 20px;
+}
+
+/* STATS */
+
+.stats-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stats-card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stats-line {
+  width: 6px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+/* CHARTS */
+
+.chart-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.chart-card {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.chart-card h2 {
+  margin-bottom: 20px;
+}
+
+/* FORM */
+
+.form-card {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.form-card h1 {
+  margin-bottom: 25px;
+  color: white;
+}
+
+.form-card label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* INPUTS */
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  background: #111827;
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+textarea {
+  height: 120px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+/* BUTTON */
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* TASKS */
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.task-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.priority {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+}
+
+.Low {
+  background: #10b981;
+}
+
+.Medium {
+  background: #f59e0b;
+}
+
+.High {
+  background: #ef4444;
+}
+
+.status {
+  color: #d1d5db;
+}
+
+.task-footer {
+  margin-top: 20px;
+}
+
+/* LOGIN */
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.login-left,
+.login-right {
+  width: 50%;
+}
+
+.login-left {
+  background: #0f172a;
+  padding: 60px;
+}
+
+.login-box {
+  margin-top: 140px;
+  max-width: 500px;
+}
+
+.login-box h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  margin-bottom: 25px;
+  color: #94a3b8;
+}
+
+.login-right {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-card {
+  background: white;
+  width: 320px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.floating-card h2,
+.floating-card p {
+  color: black;
+}
+
+/* GLOBAL TEXT */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span {
+  color: white;
+}
+
+/* RECHARTS TOOLTIP */
+
+.recharts-default-tooltip {
+  background: white !important;
+  border-radius: 10px !important;
+  border: none !important;
+  padding: 10px !important;
+}
+
+.recharts-tooltip-label {
+  color: black !important;
+  font-weight: bold !important;
+}
+
+.recharts-tooltip-item {
+  color: black !important;
+}
+
+.recharts-tooltip-item-name {
+  color: black !important;
+}
+
+.recharts-tooltip-item-value {
+  color: black !important;
+}
