@@ -1,1 +1,0 @@
-export const API = "https://task-management-app-77tz.onrender.com";
