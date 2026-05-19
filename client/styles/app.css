@@ -1,16 +1,29 @@
-* {
+/* ===== TASK PRIORITY COLORS ===== */
 .Low {
   background: #10b981;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
 }
 
 .Medium {
   background: #f59e0b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
 }
 
 .High {
   background: #ef4444;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
 }
 
+/* ===== TASK TEXT ===== */
 .status {
   color: #777;
 }
@@ -19,26 +32,34 @@
   margin-top: 20px;
 }
 
+/* ===== LOGIN / REGISTER PAGE ===== */
 .login-page {
   display: flex;
   height: 100vh;
 }
 
+/* LEFT SIDE */
 .login-left,
 .login-right {
   width: 50%;
 }
 
+/* LEFT SIDE FORM AREA */
 .login-left {
   background: white;
   padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* LOGIN BOX */
 .login-box {
-  margin-top: 140px;
-  max-width: 500px;
+  width: 100%;
+  max-width: 380px;
 }
 
+.login-box h1,
 .login-box h2 {
   margin-bottom: 10px;
 }
@@ -48,6 +69,33 @@
   color: #777;
 }
 
+/* INPUTS */
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+/* BUTTON */
+.login-box button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #1d4ed8;
+}
+
+/* RIGHT SIDE */
 .login-right {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   display: flex;
@@ -55,10 +103,11 @@
   align-items: center;
 }
 
+/* FLOATING CARD */
 .floating-card {
   background: white;
   width: 320px;
   padding: 25px;
   border-radius: 20px;
-}
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
