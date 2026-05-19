@@ -5,13 +5,14 @@
   font-family: Arial, sans-serif;
 }
 
-.login-page {
+/* ================= LOGIN / REGISTER ONLY ================= */
+
+.auth-page {
   display: flex;
   height: 100vh;
 }
 
-/* LEFT SIDE */
-.login-left {
+.auth-left {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -19,8 +20,7 @@
   background: white;
 }
 
-/* RIGHT SIDE */
-.login-right {
+.auth-right {
   flex: 1;
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   display: flex;
@@ -28,16 +28,14 @@
   align-items: center;
 }
 
-/* FORM BOX */
-.login-box {
+.auth-box {
   width: 100%;
-  max-width: 350px;   /* 🔥 THIS FIXES BIG INPUT ISSUE */
+  max-width: 350px;
   display: flex;
   flex-direction: column;
 }
 
-/* INPUTS */
-.login-box input {
+.auth-box input {
   width: 100%;
   padding: 10px;
   margin-top: 12px;
@@ -45,8 +43,7 @@
   border-radius: 6px;
 }
 
-/* BUTTON */
-.login-box button {
+.auth-box button {
   margin-top: 20px;
   padding: 10px;
   background: #2563eb;
@@ -56,10 +53,52 @@
   cursor: pointer;
 }
 
-/* RIGHT CARD */
 .floating-card {
   background: white;
   padding: 20px;
   width: 300px;
   border-radius: 12px;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard {
+  padding: 20px;
+}
+
+.task-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.task-card {
+  width: 260px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* PRIORITY TAGS */
+
+.Low {
+  background: #10b981;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.Medium {
+  background: #f59e0b;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.High {
+  background: #ef4444;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 5px;
 }
