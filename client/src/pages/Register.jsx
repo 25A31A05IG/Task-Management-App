@@ -22,7 +22,7 @@ function Register() {
         data
       );
 
-      // SAVE USER + TOKEN
+      // IMPORTANT: overwrite old user
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       alert("Registration successful");
