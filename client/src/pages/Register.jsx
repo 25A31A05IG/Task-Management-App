@@ -24,61 +24,37 @@ function Register() {
 
       alert("Registered successfully");
       navigate("/");
-    } catch (err) {
-      alert(err.response?.data?.message || "Registration failed");
+    } catch {
+      alert("Registration failed");
     }
   };
 
   return (
-    <div className="login-page">
+    <div className="auth-page">
+      <div className="auth-left">
+        <div className="auth-box">
+          <h2>Register</h2>
 
-      <div className="login-left">
-        <div className="login-box">
-
-          <h1>Register</h1>
-          <p>Create your account</p>
-
-          <input
-            name="username"
-            placeholder="Enter username"
-            onChange={handleChange}
-          />
-
-          <input
-            name="email"
-            placeholder="Enter email"
-            onChange={handleChange}
-          />
-
-          <input
-            name="password"
-            type="password"
-            placeholder="Enter password"
-            onChange={handleChange}
-          />
+          <input name="username" placeholder="Username" onChange={handleChange} />
+          <input name="email" placeholder="Email" onChange={handleChange} />
+          <input name="password" placeholder="Password" type="password" onChange={handleChange} />
 
           <button onClick={register}>Register</button>
 
-          <p style={{ marginTop: "20px" }}>
+          <p style={{ marginTop: "15px" }}>
             Already have an account?{" "}
-            <span
-              onClick={() => navigate("/")}
-              style={{ color: "blue", cursor: "pointer" }}
-            >
+            <span onClick={() => navigate("/")} style={{ color: "blue", cursor: "pointer" }}>
               Login
             </span>
           </p>
-
         </div>
       </div>
 
-      <div className="login-right">
+      <div className="auth-right">
         <div className="floating-card">
-          <h2>Stay Organized 📋</h2>
-          <p>Track tasks and boost productivity.</p>
+          <h3>Manage Tasks Easily 📌</h3>
         </div>
       </div>
-
     </div>
   );
 }
