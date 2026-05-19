@@ -20,7 +20,7 @@ function Register() {
 
   const register = async () => {
     try {
-      console.log("DATA:", data);
+      console.log("SENDING:", data);
 
       const res = await axios.post(
         "https://task-management-app-77tz.onrender.com/api/users/register",
