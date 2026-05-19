@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./auth.css";
 
 function Register() {
   const [data, setData] = useState({
@@ -30,40 +31,38 @@ function Register() {
   };
 
   return (
-    <div className="login-page">
-      <h2>Register</h2>
+    <div className="auth-page">
+      <div className="auth-box">
+        <h2>Register</h2>
 
-      <input
-        name="username"
-        placeholder="username"
-        onChange={handleChange}
-      />
+        <input
+          name="username"
+          placeholder="Username"
+          onChange={handleChange}
+        />
 
-      <input
-        name="email"
-        placeholder="email"
-        onChange={handleChange}
-      />
+        <input
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+        />
 
-      <input
-        name="password"
-        type="password"
-        placeholder="password"
-        onChange={handleChange}
-      />
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
 
-      <button onClick={register}>Register</button>
+        <button onClick={register}>Register</button>
 
-      {/* 👇 LINK TO LOGIN */}
-      <p style={{ marginTop: "15px" }}>
-        Already have an account?{" "}
-        <span
-          onClick={() => navigate("/")}
-          style={{ color: "blue", cursor: "pointer", fontWeight: "bold" }}
-        >
-          Login
-        </span>
-      </p>
+        <p>
+          Already have an account?{" "}
+          <span onClick={() => navigate("/")}>
+            Login
+          </span>
+        </p>
+      </div>
     </div>
   );
 }
