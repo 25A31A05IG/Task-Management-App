@@ -44,7 +44,6 @@ body {
   );
 
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
 }
 
@@ -118,7 +117,6 @@ body {
 }
 
 .dashboard-header h1 {
-
   font-size: 32px;
 
   background: linear-gradient(
@@ -128,7 +126,6 @@ body {
   );
 
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
 
   font-weight: bold;
@@ -142,9 +139,7 @@ body {
 /* GRADIENT TITLES */
 
 .gradient-title {
-
   font-size: 32px;
-
   font-weight: bold;
 
   background: linear-gradient(
@@ -154,11 +149,9 @@ body {
   );
 
   -webkit-background-clip: text;
-
   -webkit-text-fill-color: transparent;
 
   display: inline-block;
-
   margin-bottom: 20px;
 }
 
@@ -335,5 +328,5 @@ button:hover {
 
 .login-box {
   margin-top: 140px;
-  max-w
- 
+  max-width: 400px;
+}
