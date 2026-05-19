@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./auth.css";
 
 function Register() {
   const [data, setData] = useState({
@@ -31,38 +30,55 @@ function Register() {
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-box">
-        <h2>Register</h2>
+    <div className="login-page">
 
-        <input
-          name="username"
-          placeholder="Username"
-          onChange={handleChange}
-        />
+      <div className="login-left">
+        <div className="login-box">
 
-        <input
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-        />
+          <h1>Register</h1>
+          <p>Create your account</p>
 
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
+          <input
+            name="username"
+            placeholder="Enter username"
+            onChange={handleChange}
+          />
 
-        <button onClick={register}>Register</button>
+          <input
+            name="email"
+            placeholder="Enter email"
+            onChange={handleChange}
+          />
 
-        <p>
-          Already have an account?{" "}
-          <span onClick={() => navigate("/")}>
-            Login
-          </span>
-        </p>
+          <input
+            name="password"
+            type="password"
+            placeholder="Enter password"
+            onChange={handleChange}
+          />
+
+          <button onClick={register}>Register</button>
+
+          <p style={{ marginTop: "20px" }}>
+            Already have an account?{" "}
+            <span
+              onClick={() => navigate("/")}
+              style={{ color: "blue", cursor: "pointer" }}
+            >
+              Login
+            </span>
+          </p>
+
+        </div>
       </div>
+
+      <div className="login-right">
+        <div className="floating-card">
+          <h2>Stay Organized 📋</h2>
+          <p>Track tasks and boost productivity.</p>
+        </div>
+      </div>
+
     </div>
   );
 }
