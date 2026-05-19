@@ -3,7 +3,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const [data, setData] = useState({ email: "", password: "" });
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -12,43 +16,29 @@ function Login() {
 
   const login = async () => {
     try {
-      await axios.post(
+      const res = await axios.post(
         "https://task-management-app-77tz.onrender.com/api/users/login",
         data
       );
 
+      // SAVE USER + TOKEN
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+      localStorage.setItem("token", res.data.token);
+
       alert("Login successful");
       navigate("/dashboard");
-    } catch {
-      alert("Login failed");
+
+    } catch (err) {
+      alert(err.response?.data?.message || "Login failed");
     }
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-left">
-        <div className="auth-box">
-          <h2>Login</h2>
+    <div>
+      <input name="email" onChange={handleChange} placeholder="Email" />
+      <input name="password" type="password" onChange={handleChange} placeholder="Password" />
 
-          <input name="email" placeholder="Email" onChange={handleChange} />
-          <input name="password" placeholder="Password" type="password" onChange={handleChange} />
-
-          <button onClick={login}>Login</button>
-
-          <p style={{ marginTop: "15px" }}>
-            Don’t have an account?{" "}
-            <span onClick={() => navigate("/register")} style={{ color: "blue", cursor: "pointer" }}>
-              Register
-            </span>
-          </p>
-        </div>
-      </div>
-
-      <div className="auth-right">
-        <div className="floating-card">
-          <h3>Stay Organized 📋</h3>
-        </div>
-      </div>
+      <button onClick={login}>Login</button>
     </div>
   );
 }
