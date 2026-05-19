@@ -1,19 +1,30 @@
-import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from "./Layout";
 import Dashboard from "./pages/Dashboard";
 import CreateTask from "./pages/CreateTask";
-import ManageTasks from "./pages/ManageTasks";
+import ManageTask from "./pages/ManageTask";
+import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/create-task" element={<CreateTask />} />
-      <Route path="/manage-tasks" element={<ManageTasks />} />
-      <Route path="/register" element={<Register />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+
+        {/* AUTH */}
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* PROTECTED LAYOUT */}
+        <Route element={<Layout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/create" element={<CreateTask />} />
+          <Route path="/manage" element={<ManageTask />} />
+        </Route>
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
