@@ -1,64 +1,41 @@
-import { Link, useNavigate } from "react-router-dom";
-import profile from "../assets/profile.jpg";
+import { useEffect, useState } from "react";
 
 function Sidebar() {
+  const [user, setUser] = useState(null);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    const loadUser = () => {
+      const stored = localStorage.getItem("user");
+      if (stored) {
+        setUser(JSON.parse(stored));
+      }
+    };
 
-  // LOGOUT
-  const logout = () => {
+    loadUser();
 
-    localStorage.removeItem("token");
+    // updates when localStorage changes in other tabs/pages
+    window.addEventListener("storage", loadUser);
 
-    navigate("/");
-  };
+    return () => window.removeEventListener("storage", loadUser);
+  }, []);
 
   return (
     <div className="sidebar">
 
-      {/* LOGO */}
-      <div className="logo">
-        <h2>TaskManager</h2>
-      </div>
-
-      {/* PROFILE */}
       <div className="profile">
+        <img src="https://i.pravatar.cc/100" alt="profile" />
 
-        <img
-          src={profile}
-          alt="profile"
-        />
-
-        <h3>Ramesh</h3>
+        {/* DYNAMIC USER */}
+        <h3>{user?.username || "Guest"}</h3>
 
         <p>Full Stack Developer</p>
-
       </div>
 
-      {/* NAVIGATION */}
       <nav>
-
-        <Link to="/dashboard">
-          Dashboard
-        </Link>
-
-        <Link to="/create-task">
-          Create Task
-        </Link>
-
-        <Link to="/manage-tasks">
-          Manage Tasks
-        </Link>
-
+        <a href="/dashboard">Dashboard</a>
+        <a href="/create">Create Task</a>
+        <a href="/manage">Manage Tasks</a>
       </nav>
-
-      {/* LOGOUT */}
-      <button
-        className="logout-btn"
-        onClick={logout}
-      >
-        Logout
-      </button>
 
     </div>
   );
