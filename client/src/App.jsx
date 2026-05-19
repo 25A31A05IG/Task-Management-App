@@ -1,22 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./Layout";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
 import Dashboard from "./pages/Dashboard";
 import CreateTask from "./pages/CreateTask";
 import ManageTask from "./pages/ManageTask";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 
 function App() {
   return (
     <BrowserRouter>
+
       <Routes>
 
-        {/* AUTH */}
+        {/* AUTH PAGES */}
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* PROTECTED LAYOUT */}
+        {/* MAIN APP WRAPPED INSIDE LAYOUT */}
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create" element={<CreateTask />} />
@@ -24,6 +26,7 @@ function App() {
         </Route>
 
       </Routes>
+
     </BrowserRouter>
   );
 }
