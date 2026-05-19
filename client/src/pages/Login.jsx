@@ -21,7 +21,7 @@ function Login() {
         data
       );
 
-      // SAVE USER + TOKEN
+      // IMPORTANT: overwrite old user
       localStorage.setItem("user", JSON.stringify(res.data.user));
       localStorage.setItem("token", res.data.token);
 
