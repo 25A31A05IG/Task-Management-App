@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-function Layout({ children }) {
+function Layout() {
   const navigate = useNavigate();
 
   const logout = () => {
@@ -10,7 +11,7 @@ function Layout({ children }) {
 
   return (
     <div style={{ display: "flex", height: "100vh" }}>
-      
+
       {/* Sidebar */}
       <div
         style={{
@@ -22,8 +23,16 @@ function Layout({ children }) {
       >
         <h2>Task Manager</h2>
 
-        <button onClick={() => navigate("/tasks")}>
+        <button onClick={() => navigate("/dashboard")}>
           Dashboard
+        </button>
+
+        <button onClick={() => navigate("/create")}>
+          Create Task
+        </button>
+
+        <button onClick={() => navigate("/manage")}>
+          Manage Tasks
         </button>
 
         <button onClick={logout} style={{ marginTop: "10px" }}>
@@ -33,8 +42,9 @@ function Layout({ children }) {
 
       {/* Main Content */}
       <div style={{ flex: 1, padding: "20px", background: "#f3f4f6" }}>
-        {children}
+        <Outlet />
       </div>
+
     </div>
   );
 }
