@@ -21,11 +21,9 @@ function Login() {
         data
       );
 
-      alert("Login successful");
-
-      // store user
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
+      alert("Login successful");
       navigate("/dashboard");
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
@@ -33,13 +31,34 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="login-page">
       <h2>Login</h2>
 
-      <input name="email" onChange={handleChange} placeholder="email" />
-      <input name="password" type="password" onChange={handleChange} placeholder="password" />
+      <input
+        name="email"
+        placeholder="email"
+        onChange={handleChange}
+      />
+
+      <input
+        name="password"
+        type="password"
+        placeholder="password"
+        onChange={handleChange}
+      />
 
       <button onClick={login}>Login</button>
+
+      {/* 👇 LINK TO REGISTER */}
+      <p style={{ marginTop: "15px" }}>
+        Don’t have an account?{" "}
+        <span
+          onClick={() => navigate("/register")}
+          style={{ color: "blue", cursor: "pointer", fontWeight: "bold" }}
+        >
+          Register
+        </span>
+      </p>
     </div>
   );
 }
