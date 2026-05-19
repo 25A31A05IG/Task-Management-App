@@ -12,58 +12,30 @@ function Register() {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
+    setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const register = async () => {
     try {
-      console.log("SENDING:", data);
-
-      const res = await axios.post(
+      await axios.post(
         "https://task-management-app-77tz.onrender.com/api/users/register",
         data
       );
 
-      console.log("SUCCESS:", res.data);
-
-      alert("Registration successful");
-
+      alert("Registered successfully");
       navigate("/");
     } catch (err) {
-      console.log("ERROR:", err.response?.data || err.message);
-
       alert(err.response?.data?.message || "Registration failed");
     }
   };
 
   return (
     <div>
-      <h1>Register</h1>
+      <h2>Register</h2>
 
-      <input
-        name="username"
-        placeholder="username"
-        value={data.username}
-        onChange={handleChange}
-      />
-
-      <input
-        name="email"
-        placeholder="email"
-        value={data.email}
-        onChange={handleChange}
-      />
-
-      <input
-        name="password"
-        type="password"
-        placeholder="password"
-        value={data.password}
-        onChange={handleChange}
-      />
+      <input name="username" onChange={handleChange} placeholder="username" />
+      <input name="email" onChange={handleChange} placeholder="email" />
+      <input name="password" type="password" onChange={handleChange} placeholder="password" />
 
       <button onClick={register}>Register</button>
     </div>
