@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./auth.css";
 
 function Login() {
   const [data, setData] = useState({
@@ -32,32 +31,49 @@ function Login() {
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-box">
-        <h2>Login</h2>
+    <div className="login-page">
 
-        <input
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-        />
+      <div className="login-left">
+        <div className="login-box">
 
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
+          <h1>Login</h1>
+          <p>Welcome back</p>
 
-        <button onClick={login}>Login</button>
+          <input
+            name="email"
+            placeholder="Enter email"
+            onChange={handleChange}
+          />
 
-        <p>
-          Don’t have an account?{" "}
-          <span onClick={() => navigate("/register")}>
-            Register
-          </span>
-        </p>
+          <input
+            name="password"
+            type="password"
+            placeholder="Enter password"
+            onChange={handleChange}
+          />
+
+          <button onClick={login}>Login</button>
+
+          <p style={{ marginTop: "20px" }}>
+            Don’t have an account?{" "}
+            <span
+              onClick={() => navigate("/register")}
+              style={{ color: "blue", cursor: "pointer" }}
+            >
+              Register
+            </span>
+          </p>
+
+        </div>
       </div>
+
+      <div className="login-right">
+        <div className="floating-card">
+          <h2>Stay Organized 📋</h2>
+          <p>Manage tasks easily and stay productive.</p>
+        </div>
+      </div>
+
     </div>
   );
 }
