@@ -21,11 +21,9 @@ function Login() {
         data
       );
 
-      // IMPORTANT: overwrite old user
       localStorage.setItem("user", JSON.stringify(res.data.user));
       localStorage.setItem("token", res.data.token);
 
-      alert("Login successful");
       navigate("/dashboard");
 
     } catch (err) {
