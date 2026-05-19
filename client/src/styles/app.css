@@ -1,127 +1,338 @@
-/* app.css */
-body {
+* {
   margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  background-color: #f8fafc;
-  color: #334155;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.dashboard-container {
-  display: flex;
-  min-height: 100vh;
+body {
+  background: #0f172a;
+  color: white;
 }
+
+/* LAYOUT */
+
+.layout {
+  display: flex;
+}
+
+/* SIDEBAR */
 
 .sidebar {
-  width: 256px;
-  background: #ffffff;
-  border-right: 1px solid #f1f5f9;
-  padding: 24px 0;
-  display: flex;
-  flex-direction: column;
+  width: 250px;
+  height: 100vh;
+  background: #111827;
+  padding: 25px;
+  border-right: 1px solid #1e293b;
+  position: fixed;
 }
+
+/* LOGO */
 
 .logo {
-  font-size: 20px;
-  font-weight: 700;
-  padding: 0 24px;
-  margin-bottom: 32px;
-  color: #0f172a;
+  margin-bottom: 30px;
 }
 
-.profile-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 24px;
-  margin-bottom: 32px;
-}
-
-.avatar-fallback {
-  width: 80px;
-  height: 80px;
-  background: #e2e8f0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.logo h2 {
+  font-size: 30px;
   font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 12px;
+
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 }
 
-.badge-admin {
-  background: #2563eb;
+/* PROFILE */
+
+.profile {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+}
+
+.profile h3 {
+  margin-top: 12px;
   color: white;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 2px 12px;
-  border-radius: 6px;
-  margin-bottom: 8px;
 }
 
-.email {
-  font-size: 12px;
+.profile p {
   color: #94a3b8;
-  margin: 2px 0 0 0;
+  margin-top: 5px;
 }
 
-.nav-menu {
+/* SIDEBAR NAV */
+
+.sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 0 12px;
+  gap: 15px;
 }
 
-.nav-item {
-  display: block;
-  padding: 12px 16px;
-  color: #475569;
+.sidebar nav a {
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 8px;
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-.nav-item.active {
-  background: #eff6ff;
-  color: #2563eb;
-  border-right: 4px solid #2563eb;
-  border-radius: 8px 0 0 8px;
+.sidebar nav a:hover {
+  background: white;
+  color: black;
 }
+
+/* LOGOUT BUTTON */
+
+.logout-btn {
+  margin-top: 30px;
+  width: 100%;
+}
+
+/* MAIN CONTENT */
 
 .main-content {
-  flex-grow: 1;
-  padding: 32px;
+  margin-left: 270px;
+  padding: 30px;
+  width: 100%;
 }
 
-.welcome-card {
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
-  border: 1px solid #f1f5f9;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+/* DASHBOARD HEADER */
+
+.dashboard-header {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
 }
 
-.metrics-grid {
+.dashboard-header h1 {
+
+  font-size: 32px;
+
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  font-weight: bold;
+}
+
+.dashboard-header p {
+  margin-top: 10px;
+  color: #cbd5e1;
+}
+
+/* GRADIENT TITLES */
+
+.gradient-title {
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  background: linear-gradient(
+    to right,
+    #8b5cf6,
+    #3b82f6
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+
+  margin-bottom: 20px;
+}
+
+/* STATS */
+
+.stats-grid {
+  margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 24px;
+  gap: 20px;
 }
 
-.metric-item {
+.stats-card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+}
+
+.stats-line {
+  width: 6px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+/* CHARTS */
+
+.chart-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.chart-card {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.chart-card h2 {
+  margin-bottom: 20px;
+}
+
+/* FORM */
+
+.form-card {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.form-card h1 {
+  margin-bottom: 25px;
+  color: white;
+}
+
+.form-card label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* INPUTS */
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  background: #111827;
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+textarea {
+  height: 120px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+/* BUTTON */
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* TASKS */
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.task-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.priority {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
   font-size: 14px;
 }
 
-.indicator {
-  width: 6px;
-  height: 20px;
-  border-radius: 9999px;
+.Low {
+  background: #10b981;
 }
-.indicator.total { background: #2563eb; }
-.indicator.pending { background: #a855f7; }
-.indicator.progress { background: #22d3ee; }
-.indicator.completed { background: #22c55e; }
+
+.Medium {
+  background: #f59e0b;
+}
+
+.High {
+  background: #ef4444;
+}
+
+.status {
+  color: #d1d5db;
+}
+
+.task-footer {
+  margin-top: 20px;
+}
+
+/* LOGIN */
+
+.login-page {
+  display: flex;
+  height: 100vh;
+}
+
+.login-left,
+.login-right {
+  width: 50%;
+}
+
+.login-left {
+  background: #0f172a;
+  padding: 60px;
+}
+
+.login-box {
+  margin-top: 140px;
+  max-w
