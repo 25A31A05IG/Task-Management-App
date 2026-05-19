@@ -1,23 +1,27 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const connectDB = require("./config/db");
 
 const app = express();
 
+// ✅ THIS IS THE FIX
+app.use(cors({
+  origin: "https://task-management-app-rdhv.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
-// connect DB first
 connectDB();
 
-// test route
 app.get("/", (req, res) => {
   res.send("API Running");
 });
 
-// routes
 app.use("/api/users", require("./routes/userRoutes"));
 
-// start server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
