@@ -17,44 +17,29 @@ function Register() {
 
   const register = async () => {
     try {
-      await axios.post(
+      const res = await axios.post(
         "https://task-management-app-77tz.onrender.com/api/users/register",
         data
       );
 
-      alert("Registered successfully");
+      // SAVE USER + TOKEN
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      alert("Registration successful");
       navigate("/");
-    } catch {
-      alert("Registration failed");
+
+    } catch (err) {
+      alert(err.response?.data?.message || "Registration failed");
     }
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-left">
-        <div className="auth-box">
-          <h2>Register</h2>
+    <div>
+      <input name="username" onChange={handleChange} placeholder="Username" />
+      <input name="email" onChange={handleChange} placeholder="Email" />
+      <input name="password" type="password" onChange={handleChange} placeholder="Password" />
 
-          <input name="username" placeholder="Username" onChange={handleChange} />
-          <input name="email" placeholder="Email" onChange={handleChange} />
-          <input name="password" placeholder="Password" type="password" onChange={handleChange} />
-
-          <button onClick={register}>Register</button>
-
-          <p style={{ marginTop: "15px" }}>
-            Already have an account?{" "}
-            <span onClick={() => navigate("/")} style={{ color: "blue", cursor: "pointer" }}>
-              Login
-            </span>
-          </p>
-        </div>
-      </div>
-
-      <div className="auth-right">
-        <div className="floating-card">
-          <h3>Manage Tasks Easily 📌</h3>
-        </div>
-      </div>
+      <button onClick={register}>Register</button>
     </div>
   );
 }
