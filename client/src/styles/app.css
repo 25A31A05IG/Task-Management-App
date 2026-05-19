@@ -5,44 +5,59 @@
   font-family: Arial, sans-serif;
 }
 
-/* ================= LOGIN / REGISTER ONLY ================= */
+/* DARK BACKGROUND APP */
+body {
+  background: #0f172a; /* dark navy */
+  color: white;
+}
 
+/* AUTH PAGES */
 .auth-page {
   display: flex;
   height: 100vh;
 }
 
+/* LEFT SIDE */
 .auth-left {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
+  background: #0f172a;
 }
 
+/* RIGHT SIDE */
 .auth-right {
   flex: 1;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #111827;
 }
 
+/* FORM BOX */
 .auth-box {
   width: 100%;
   max-width: 350px;
   display: flex;
   flex-direction: column;
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 10px;
 }
 
+/* INPUTS */
 .auth-box input {
   width: 100%;
   padding: 10px;
   margin-top: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #374151;
   border-radius: 6px;
+  background: #111827;
+  color: white;
 }
 
+/* BUTTON */
 .auth-box button {
   margin-top: 20px;
   padding: 10px;
@@ -53,52 +68,11 @@
   cursor: pointer;
 }
 
+/* FLOATING CARD */
 .floating-card {
-  background: white;
+  background: #1f2937;
   padding: 20px;
   width: 300px;
   border-radius: 12px;
-}
-
-/* ================= DASHBOARD ================= */
-
-.dashboard {
-  padding: 20px;
-}
-
-.task-container {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.task-card {
-  width: 260px;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* PRIORITY TAGS */
-
-.Low {
-  background: #10b981;
   color: white;
-  padding: 3px 8px;
-  border-radius: 5px;
-}
-
-.Medium {
-  background: #f59e0b;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 5px;
-}
-
-.High {
-  background: #ef4444;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 5px;
 }
