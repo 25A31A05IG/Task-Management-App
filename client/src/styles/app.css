@@ -1,3 +1,5 @@
+/* ================= BASE ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +7,18 @@
   font-family: Arial, sans-serif;
 }
 
-/* DARK BACKGROUND APP */
 body {
-  background: #0f172a; /* dark navy */
+  background: #0f172a;
   color: white;
 }
 
-/* AUTH PAGES */
+/* ================= AUTH (LOGIN / REGISTER) ================= */
+
 .auth-page {
   display: flex;
   height: 100vh;
 }
 
-/* LEFT SIDE */
 .auth-left {
   flex: 1;
   display: flex;
@@ -26,7 +27,6 @@ body {
   background: #0f172a;
 }
 
-/* RIGHT SIDE */
 .auth-right {
   flex: 1;
   display: flex;
@@ -35,7 +35,6 @@ body {
   background: #111827;
 }
 
-/* FORM BOX */
 .auth-box {
   width: 100%;
   max-width: 350px;
@@ -46,7 +45,6 @@ body {
   border-radius: 10px;
 }
 
-/* INPUTS */
 .auth-box input {
   width: 100%;
   padding: 10px;
@@ -57,7 +55,6 @@ body {
   color: white;
 }
 
-/* BUTTON */
 .auth-box button {
   margin-top: 20px;
   padding: 10px;
@@ -68,11 +65,95 @@ body {
   cursor: pointer;
 }
 
-/* FLOATING CARD */
+.auth-box button:hover {
+  background: #1d4ed8;
+}
+
 .floating-card {
   background: #1f2937;
   padding: 20px;
   width: 300px;
   border-radius: 12px;
   color: white;
+}
+
+/* ================= APP LAYOUT ================= */
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: #111827;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar button {
+  padding: 10px;
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background: #2563eb;
+}
+
+/* PROFILE */
+.profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: gray;
+  border-radius: 50%;
+  margin: auto;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ================= TASK PRIORITY ================= */
+
+.Low {
+  background: #10b981;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.Medium {
+  background: #f59e0b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.High {
+  background: #ef4444;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
