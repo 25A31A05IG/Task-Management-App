@@ -30,14 +30,40 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="login-page">
       <h2>Register</h2>
 
-      <input name="username" onChange={handleChange} placeholder="username" />
-      <input name="email" onChange={handleChange} placeholder="email" />
-      <input name="password" type="password" onChange={handleChange} placeholder="password" />
+      <input
+        name="username"
+        placeholder="username"
+        onChange={handleChange}
+      />
+
+      <input
+        name="email"
+        placeholder="email"
+        onChange={handleChange}
+      />
+
+      <input
+        name="password"
+        type="password"
+        placeholder="password"
+        onChange={handleChange}
+      />
 
       <button onClick={register}>Register</button>
+
+      {/* 👇 LINK TO LOGIN */}
+      <p style={{ marginTop: "15px" }}>
+        Already have an account?{" "}
+        <span
+          onClick={() => navigate("/")}
+          style={{ color: "blue", cursor: "pointer", fontWeight: "bold" }}
+        >
+          Login
+        </span>
+      </p>
     </div>
   );
 }
