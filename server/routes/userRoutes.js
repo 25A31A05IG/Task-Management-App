@@ -2,21 +2,12 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 
-// TEST ROUTE
-router.get("/", (req, res) => {
-  res.send("User route working");
-});
-
 // REGISTER
 router.post("/register", async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    console.log("REGISTER BODY:", req.body);
-
-    if (!username || !email || !password) {
-      return res.status(400).json({ message: "All fields required" });
-    }
+    console.log("REGISTER:", req.body);
 
     const existing = await User.findOne({ email });
 
@@ -30,13 +21,36 @@ router.post("/register", async (req, res) => {
       password,
     });
 
-    res.status(201).json({
-      message: "User registered successfully",
-      user,
-    });
+    res.json({ message: "Registered successfully", user });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Server error" });
+  }
+});
+
+// LOGIN
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    console.log("LOGIN:", req.body);
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(400).json({ message: "Email not found" });
+    }
+
+    if (user.password !== password) {
+      return res.status(400).json({ message: "Invalid password" });
+    }
+
+    res.json({
+      message: "Login successful",
+      user,
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 
