@@ -2,6 +2,11 @@ import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 
 function CreateTask() {
+
+  // CURRENT USER
+  const user =
+    JSON.parse(localStorage.getItem("user"));
+
   const [task, setTask] = useState({
     title: "",
     description: "",
@@ -10,16 +15,22 @@ function CreateTask() {
   });
 
   const createTask = () => {
-    const existing =
-      JSON.parse(localStorage.getItem("tasks")) || [];
 
+    // GET USER TASKS
+    const existing =
+      JSON.parse(
+        localStorage.getItem(`tasks_${user?._id}`)
+      ) || [];
+
+    // ADD NEW TASK
     existing.push({
       ...task,
       completed: false,
     });
 
+    // SAVE USER TASKS
     localStorage.setItem(
-      "tasks",
+      `tasks_${user?._id}`,
       JSON.stringify(existing)
     );
 
@@ -35,13 +46,16 @@ function CreateTask() {
 
   return (
     <div className="layout">
+
       <Sidebar />
 
       <div className="main-content">
+
         <div className="form-card">
+
           <h1 className="gradient-title">
-               Create Task
-                 </h1>
+            Create Task
+          </h1>
 
           <label>Task Title</label>
 
@@ -73,6 +87,7 @@ function CreateTask() {
           <div className="row">
 
             <div>
+
               <label>Priority</label>
 
               <select
@@ -88,9 +103,11 @@ function CreateTask() {
                 <option>Medium</option>
                 <option>High</option>
               </select>
+
             </div>
 
             <div>
+
               <label>Due Date</label>
 
               <input
@@ -103,6 +120,7 @@ function CreateTask() {
                   })
                 }
               />
+
             </div>
 
           </div>
@@ -112,7 +130,9 @@ function CreateTask() {
           </button>
 
         </div>
+
       </div>
+
     </div>
   );
 }
