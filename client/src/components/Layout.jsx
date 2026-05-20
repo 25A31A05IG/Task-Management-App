@@ -1,5 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 
 function Layout() {
   const navigate = useNavigate();
@@ -35,13 +34,22 @@ function Layout() {
           Manage Tasks
         </button>
 
-        <button onClick={logout} style={{ marginTop: "10px" }}>
+        <button
+          onClick={logout}
+          style={{ marginTop: "10px" }}
+        >
           Logout
         </button>
       </div>
 
       {/* Main Content */}
-      <div style={{ flex: 1, padding: "20px", background: "#f3f4f6" }}>
+      <div
+        style={{
+          flex: 1,
+          padding: "20px",
+          background: "#f3f4f6",
+        }}
+      >
         <Outlet />
       </div>
 
