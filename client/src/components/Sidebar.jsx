@@ -22,7 +22,10 @@ function Sidebar() {
     <div className="sidebar">
 
       <div className="profile">
-        <img src="https://i.pravatar.cc/100" alt="profile" />
+        <img
+  src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+  alt="profile"
+/>
 
         <h3>{user?.username || "Guest"}</h3>
         <p>Full Stack Developer</p>
