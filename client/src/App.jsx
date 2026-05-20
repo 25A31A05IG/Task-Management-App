@@ -6,7 +6,7 @@ import Register from "./pages/Register";
 
 import Dashboard from "./pages/Dashboard";
 import CreateTask from "./pages/CreateTask";
-import ManageTask from "./pages/ManageTask";
+import ManageTask from "./pages/ManageTasks";
 
 function App() {
   return (
