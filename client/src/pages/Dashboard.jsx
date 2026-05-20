@@ -15,6 +15,10 @@ import {
 
 function Dashboard() {
 
+  // GET USER
+  const user =
+    JSON.parse(localStorage.getItem("user"));
+
   // GET TASKS
   const tasks =
     JSON.parse(localStorage.getItem("tasks")) || [];
@@ -83,11 +87,15 @@ function Dashboard() {
 
         {/* HEADER */}
         <div className="dashboard-header">
-          <h1>Welcome Back, Ramesh! </h1>
+
+          <h1>
+            Welcome Back, {user?.username || "Guest"}!
+          </h1>
 
           <p>
             Manage your productivity efficiently
           </p>
+
         </div>
 
         {/* STATS */}
@@ -192,6 +200,7 @@ function Dashboard() {
         </div>
 
       </div>
+
     </div>
   );
 }
