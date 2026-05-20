@@ -3,8 +3,15 @@ import Sidebar from "../components/Sidebar";
 
 function ManageTasks() {
 
+  // GET USER
+  const user =
+    JSON.parse(localStorage.getItem("user"));
+
+  // GET USER TASKS
   const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
+    JSON.parse(
+      localStorage.getItem(`tasks_${user?._id}`)
+    ) || []
   );
 
   // COMPLETE TASK
@@ -17,8 +24,9 @@ function ManageTasks() {
 
     setTasks(updatedTasks);
 
+    // SAVE USER TASKS
     localStorage.setItem(
-      "tasks",
+      `tasks_${user?._id}`,
       JSON.stringify(updatedTasks)
     );
   };
@@ -32,8 +40,9 @@ function ManageTasks() {
 
     setTasks(updatedTasks);
 
+    // SAVE USER TASKS
     localStorage.setItem(
-      "tasks",
+      `tasks_${user?._id}`,
       JSON.stringify(updatedTasks)
     );
   };
@@ -46,8 +55,8 @@ function ManageTasks() {
       <div className="main-content">
 
         <h1 className="gradient-title">
-                  Manage Tasks
-                  </h1>
+          Manage Tasks
+        </h1>
 
         <div className="task-grid">
 
@@ -83,7 +92,6 @@ function ManageTasks() {
               </p>
 
               {/* BUTTONS */}
-
               <div
                 style={{
                   display: "flex",
