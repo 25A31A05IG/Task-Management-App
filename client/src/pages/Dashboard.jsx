@@ -20,13 +20,10 @@ function Dashboard() {
     JSON.parse(localStorage.getItem("user"));
 
   // GET TASKS
-  const user =
-  JSON.parse(localStorage.getItem("user"));
-
-const tasks =
-  JSON.parse(
-    localStorage.getItem(`tasks_${user?._id}`)
-  ) || [];
+  const tasks =
+    JSON.parse(
+      localStorage.getItem(`tasks_${user?._id}`)
+    ) || [];
 
   // COUNTS
   const totalTasks = tasks.length;
