@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
@@ -10,26 +11,36 @@ import ManageTask from "./pages/ManageTasks";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Routes>
 
-      <Routes>
+      {/* LOGIN PAGE */}
+      <Route path="/" element={<Login />} />
 
-        {/* AUTH PAGES */}
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+      {/* REGISTER PAGE */}
+      <Route path="/register" element={<Register />} />
 
-        {/* MAIN APP WRAPPED INSIDE LAYOUT */}
-        <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/create" element={<CreateTask />} />
-          <Route path="/manage" element={<ManageTask />} />
-        </Route>
+      {/* MAIN APP WITH SIDEBAR LAYOUT */}
+      <Route element={<Layout />}>
 
-      </Routes>
+        <Route
+          path="/dashboard"
+          element={<Dashboard />}
+        />
 
-    </BrowserRouter>
+        <Route
+          path="/create"
+          element={<CreateTask />}
+        />
+
+        <Route
+          path="/manage"
+          element={<ManageTask />}
+        />
+
+      </Route>
+
+    </Routes>
   );
 }
 
 export default App;
- 
