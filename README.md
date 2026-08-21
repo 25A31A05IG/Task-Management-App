@@ -672,25 +672,18 @@ The Task Management App can be adapted for:
 
 # 📸 Screenshots
 
-Add screenshots of your application here.
-
-Example:
 
 ```text
-## Login Page
-
-![Login Page](screenshots/login.png)
 
 ## Dashboard
-
-![Dashboard](screenshots/dashboard.png)
+<img width="1890" height="877" alt="Screenshot 2026-05-20 141134" src="https://github.com/user-attachments/assets/d22fda83-1e1b-4b8c-9ab9-6296d0ce5a3e" />
 
 ## Task Management
 
-![Tasks](screenshots/tasks.png)
+<img width="1891" height="846" alt="Screenshot 2026-05-20 141214" src="https://github.com/user-attachments/assets/fc6673e5-6ab0-4cfa-83a7-14f6a6c689cd" />
+
 ```
 
-Create a `screenshots` folder in the repository if you want to include them.
 
 ---
 
